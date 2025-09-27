@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formaweb - Création de Sites Web Modernes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="bg-gray-50">
+
+  <!-- ===== HEADER ===== -->
+  <header class="gradient-bg text-white py-20">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-5xl font-bold mb-6">Formaweb</h1>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Création de sites web modernes, adaptés à vos besoins. 
+        Des solutions professionnelles pour tous types d'entreprises.
+      </p>
+      <button onclick="document.getElementById('models').scrollIntoView({behavior: 'smooth'})" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">
+        Découvrir nos modèles
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== SECTION MODELS ===== -->
+  <section id="models" class="py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Nos Modèles de Sites Web</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Ici tes cartes (E-commerce, École, Église, Blog) -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION CONTACT ===== -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <!-- Ton formulaire + infos contact -->
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-2xl font-bold mb-4">Formaweb</h3>
+      <p class="text-gray-400 mb-6">Votre partenaire pour des sites web modernes et performants</p>
+      <div class="flex justify-center space-x-6">
+        <a href="#">Mentions légales</a>
+        <a href="#">CGV</a>
+        <a href="#">Contact</a>
+      </div>
+      <p class="text-gray-500 mt-6">© 2025 Formaweb. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
