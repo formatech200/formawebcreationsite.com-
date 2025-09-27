@@ -1,10 +1,8 @@
-// Gestion formulaire
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-
       const button = this.querySelector('button[type="submit"]');
       const originalText = button.textContent;
 
@@ -20,15 +18,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 3000);
     });
   }
-
-  // Défilement fluide
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    });
-  });
 });
