@@ -250,28 +250,35 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- Contact Form -->
 <div class="bg-gray-50 p-8 rounded-xl">
-  <form action="https://formsubmit.co/formatech200@gmail.com" method="POST" class="space-y-6">
+  <form id="contactForm" action="https://formsubmit.co/formatech200@gmail.com" method="POST" class="space-y-6">
       
       <!-- Anti-spam (important, ne pas enlever) -->
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_subject" value="Nouveau message depuis Formaweb">
 
-      <!-- Redirection après soumission -->
-      <input type="hidden" name="_next" value="https://formatech200.github.io/formawebcreationsite.com-/">
-
+      <!-- Nom -->
       <div>
           <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nom complet</label>
           <input type="text" id="name" name="name" required 
                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
       </div>
       
+      <!-- Email -->
       <div>
           <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
           <input type="email" id="email" name="email" required 
                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
       </div>
+
+      <!-- WhatsApp -->
+      <div>
+          <label for="whatsapp" class="block text-sm font-medium text-gray-700 mb-2">Contact WhatsApp</label>
+          <input type="text" id="whatsapp" name="whatsapp" placeholder="+50943750836" required
+                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+      </div>
       
+      <!-- Service -->
       <div>
           <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service souhaité</label>
           <select id="service" name="service" 
@@ -285,17 +292,44 @@
           </select>
       </div>
       
+      <!-- Message -->
       <div>
           <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
           <textarea id="message" name="message" rows="4" required 
                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"></textarea>
       </div>
       
+      <!-- Bouton -->
       <button type="submit" 
               class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
           Envoyer le message
       </button>
+
+      <!-- Zone message de confirmation -->
+      <p id="confirmationMessage" class="mt-4 text-green-600 font-semibold hidden">
+        Merci 🎉 Nous vous contacterons sous peu. 
+        <a href="https://formatech200.github.io/formawebcreationsite.com-/" class="text-indigo-600 underline">Retourner au site</a>
+      </p>
   </form>
+</div>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const confirmationMessage = document.getElementById('confirmationMessage');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Empêche la redirection par défaut
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+    }).then(() => {
+      confirmationMessage.classList.remove('hidden');
+      form.reset();
+    });
+  });
+</script>
 </div>
 </div>
             </div>
@@ -447,6 +481,7 @@
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98571035d4f6de88',t:'MTc1ODkzNDgxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
 
 
 
